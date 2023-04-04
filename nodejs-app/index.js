@@ -9,8 +9,13 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
 app.get('/', function(req, res){
-	res.status(200).send({
-		message: 'Hola Sobrino'
+    var today = new Date();
+    var now = today.toLocaleString();
+    console.log( now ); // muestra en pantalla la fecha y la hora actuales
+	
+    res.status(200).send({
+		message: 'Hola Sobrino la Fecha actual ' + now
+        
 	});
 });
 
